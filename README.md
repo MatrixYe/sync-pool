@@ -1,6 +1,13 @@
 # uniswap v2 池子事件同步器
 > 暂时只支持uniswap v2 pool 数据同步
 ## 安装启动
+同步数据存储在mongodb数据库中，如果在本地部署，请使用docker创建一个单独的mongo容器并将数据挂载到本地
+```shell
+docker volume create dquant-mongo
+docker network create dquant
+docker run -itd -p 5008:27017 --name dquant-mongo --network dquant -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=password -v dquant-mongo:/data/db mongo --wiredTigerCacheSizeGB 1.0
+
+```
 ```shell
 # 建议在单独py 环境下执行脚本，防止冲突
 pip install -r requirements.txt
