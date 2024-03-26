@@ -1,5 +1,5 @@
 # uniswap v2 池子事件同步器
-
+> 暂时只支持uniswap v2 pool 数据同步
 ## 安装启动
 ```shell
 # 建议在单独py 环境下执行脚本，防止冲突
@@ -27,7 +27,7 @@ pool = "0x769f539486b31eF310125C44d7F405C6d470cD1f"
 # [必选]替换你的服务商节点url，注意与network兼容
 node_url = "https://mainnet.infura.io/v3/**********"
 
-#[必选]是否一直运行，如果为true，那么程序将一直跟随最新高度同步数据，直至地球爆炸，如果为false，同步将在end_block处停止
+#[必选]是否一直运行，如果为true，那么程序将一直跟随最新高度同步数据，如果为false，同步将在end_block处停止
 always = true
 
 #[必选]起始点区块
@@ -48,3 +48,5 @@ port = 5008
 username = "root"
 password = "password"
 ```
+
+可以同时创造多个配置文件，多进程同步多个pool的数据。建议配置文件与pool同名或关联。
