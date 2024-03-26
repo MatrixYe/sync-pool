@@ -57,3 +57,36 @@ password = "password"
 ```
 
 可以同时创造多个配置文件，多进程同步多个pool的数据。建议配置文件与pool同名或关联。
+
+# 数据格式
+```json
+{
+  "_id": {
+    "$oid": "66028749d7310e0e56d2dc15"
+  },
+  
+  "action": "remove",
+  "block_number": 19407918,
+  "ts": 1710112619,
+  "ts_date": {
+    "$date": "2024-03-10T23:16:59.000Z"
+  },
+  "amount_a": 899.5854881971859,
+  "token_a": "GPU",
+  "amount_b": 0.33476863090498526,
+  "token_b": "WETH",
+  "maker": "unknown",
+  "txhash": "0x84165b4bcb12627787d0aad96fb78dc1e381379dafacb3330c7139fd498c8b81"
+}
+```
+
+- action 动作，swap交换，add 添加流动性，remove移除流动性
+- block_number 区块高度
+- ts 时间戳
+- ts_date 日期
+- amount_a 代币a数量
+- token_a 代币a名称
+- amount_b 代币a数量
+- token_b 代币a名称
+- maker 交易者，部分找不到
+- txhash 交易哈希
